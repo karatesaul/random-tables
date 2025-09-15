@@ -1,7 +1,10 @@
+import tablesReducer from '@/lib/features/tables/tablesSlice'
 import { configureStore } from '@reduxjs/toolkit'
 
 export const makeStore = () => configureStore({
-  reducer: {}
+    reducer: {
+        tables: tablesReducer
+    }
 });
 
 export type AppStore = ReturnType<typeof makeStore>;
