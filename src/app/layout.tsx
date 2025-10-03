@@ -23,7 +23,7 @@ const RootLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased p-4`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased w-screen h-screen`}
       >
         <StoreProvider>{children}</StoreProvider>
       </body>
