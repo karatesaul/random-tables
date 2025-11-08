@@ -26,9 +26,9 @@ const SideNavLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
           </Link>
         </h1>
       </header>
-      <div className='flex flex-row gap-2 flex-1'>
+      <div className='flex flex-row flex-1'>
         <SideNav isSideNavOpen={isSideNavOpen}></SideNav>
-        <div className=''>
+        <div className='w-full'>
           {children}
         </div>
       </div>
