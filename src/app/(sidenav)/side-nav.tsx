@@ -1,7 +1,6 @@
 import SideNavItem from './side-nav-item'
 
 const SideNav = ({ isSideNavOpen }: { isSideNavOpen: boolean }) => {
-  console.log('Side Nav Open?', isSideNavOpen)
   return (
     <nav className={'bg-background-nav flex-none overflow-hidden ' + (isSideNavOpen ? 'w-0' : '')}>
       <ul>
