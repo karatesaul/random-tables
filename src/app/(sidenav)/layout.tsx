@@ -1,35 +1,25 @@
 'use client'
 
-import { getTables, TableModel } from '@/lib/features/tables/tablesSlice'
-import { useAppSelector } from '@/lib/hooks'
+import { Bars3Icon } from '@heroicons/react/16/solid'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import { ReactNode } from 'react'
+import { ReactNode, useState } from 'react'
+import SideNav from './side-nav'
 
-const Sidenav = ({ children }: Readonly<{ children: ReactNode }>) => {
-  const pathname = usePathname()
-  const tables: Array<TableModel> = useAppSelector(getTables)
-  const navItems: ReactNode[] = tables.map((table) => {
-    const path = `/tables/${table.id}`
-    let className = 'inline-block w-full h-full p-4 hover:bg-background-hover'
+const SideNavLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
+  const [isSideNavOpen, setIsSideNavOpen] = useState(false)
 
-    if (path === pathname) {
-      className += ' bg-secondary hover:bg-secondary'
-    }
-
-    return (
-      <li key={table.id}>
-        <Link className={className}
-          href={path}>
-          {table.name}
-        </Link>
-      </li>
-    )
-  })
+  const handleClick = () => {
+    setIsSideNavOpen(!isSideNavOpen)
+  }
 
   return (
     <div className='flex flex-col h-full'>
-      <header className='w-full bg-primary p-4'>
+      <header className='w-full bg-primary p-4 flex gap-3'>
+        <button
+          onClick={handleClick}
+          title='Show/hide side menu'>
+          <Bars3Icon className='size-6'></Bars3Icon>
+        </button>
         <h1 className='text-xl font-bold'>
           <Link href='/'>
             Random Tables
@@ -37,11 +27,7 @@ const Sidenav = ({ children }: Readonly<{ children: ReactNode }>) => {
         </h1>
       </header>
       <div className='flex flex-row gap-2 flex-1'>
-        <nav className='bg-background-nav flex-none'>
-          <ul>
-            {navItems}
-          </ul>
-        </nav>
+        <SideNav isSideNavOpen={isSideNavOpen}></SideNav>
         <div className=''>
           {children}
         </div>
@@ -49,4 +35,4 @@ const Sidenav = ({ children }: Readonly<{ children: ReactNode }>) => {
     </div>
   )
 }
-export default Sidenav
+export default SideNavLayout

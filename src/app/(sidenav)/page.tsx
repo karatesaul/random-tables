@@ -1,6 +1,6 @@
 'use client'
 
-const Home = () => {
+const HomePage = () => {
   return <p>Home Page</p>
 }
-export default Home
+export default HomePage
