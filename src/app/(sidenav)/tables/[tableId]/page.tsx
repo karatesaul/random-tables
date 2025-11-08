@@ -1,6 +1,6 @@
 'use client'
 
-import Table from '@/components/table'
+import Table from '@/app/(sidenav)/tables/[tableId]/table'
 import { getTableById } from '@/lib/features/tables/tablesSlice'
 import { useAppSelector } from '@/lib/hooks'
 import { use } from 'react'

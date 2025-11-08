@@ -1,4 +1,4 @@
-import StoreProvider from '@/components/storeProvider'
+import StoreProvider from '@/app/store-provider'
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 import { ReactNode } from 'react'

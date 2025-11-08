@@ -1,5 +1,5 @@
 import { TableModel } from '@/lib/features/tables/tablesSlice'
-import TableRow from './tableRow'
+import TableRow from './table-row'
 
 const Table = ({ table }: { table: TableModel }) => {
   const rows = table.items.length ? table.items.map((item, index) => (
