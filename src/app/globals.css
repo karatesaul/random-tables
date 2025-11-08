@@ -4,7 +4,9 @@
   --background: #ffffff;
   --background-nav: #eeeeee;
   --background-hover: #dddddd;
+  --background-input: #ffffff;
   --foreground: #171717;
+  --foreground-input: #171717;
   --primary: var(--color-blue-400);
   --secondary: var(--color-cyan-600);
 }
@@ -13,7 +15,9 @@
   --color-background: var(--background);
   --color-background-nav: var(--background-nav);
   --color-background-hover: var(--background-hover);
+  --color-background-input: var(--background-input);
   --color-foreground: var(--foreground);
+  --color-foreground-input: var(--foreground-input);
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
   --font-sans: var(--font-geist-sans);
